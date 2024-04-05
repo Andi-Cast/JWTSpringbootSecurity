@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -23,9 +24,12 @@ public class SecurityConfiguration {
 
     private final JWTAuthenticationFilter jwtAuthenticationFilter;
 
-    public SecurityConfiguration(MemberDetailsServiceImp memberDetailsServiceImpl, JWTAuthenticationFilter jwtAuthenticationFilter) {
+    private final CustomLogoutHandler logoutHandler;
+
+    public SecurityConfiguration(MemberDetailsServiceImp memberDetailsServiceImpl, JWTAuthenticationFilter jwtAuthenticationFilter, CustomLogoutHandler logoutHandler) {
         this.memberDetailsServiceImpl = memberDetailsServiceImpl;
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
+        this.logoutHandler = logoutHandler;
     }
 
     @Bean
@@ -44,6 +48,11 @@ public class SecurityConfiguration {
                 .sessionManagement(session->session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+                .logout(l->l.logoutUrl("/logout")
+                        .addLogoutHandler(logoutHandler)
+                        .logoutSuccessHandler(
+                                (request, response, authentication) -> SecurityContextHolder.clearContext()
+                        ))
                 .build();
     }
 
