@@ -32,6 +32,17 @@ public class Member implements UserDetails {
     @Enumerated(value = EnumType.STRING)
     private Role role;
 
+    @OneToMany(mappedBy = "member")
+    private List<Token> tokens;
+
+    public List<Token> getTokens() {
+        return tokens;
+    }
+
+    public void setTokens(List<Token> tokens) {
+        this.tokens = tokens;
+    }
+
     public Integer getId() {
         return id;
     }

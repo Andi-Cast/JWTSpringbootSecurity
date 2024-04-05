@@ -1,6 +1,7 @@
 package Springboot.JWT.Service;
 
 import Springboot.JWT.Model.Member;
+import Springboot.JWT.Repository.TokenRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
@@ -17,6 +18,12 @@ import java.util.function.Function;
 public class JWTService {
 
     private final String SECRETE_KEY = "cc2500b65301f9301bd497af74a23760b09cc5138d043c541f7ca54a91727580";
+
+    private final TokenRepository tokenRepository;
+
+    public JWTService(TokenRepository tokenRepository) {
+        this.tokenRepository = tokenRepository;
+    }
 
     public String generateToken(Member member) {
         return Jwts
@@ -36,7 +43,11 @@ public class JWTService {
 
     public boolean isValid(String token, UserDetails member) {
         String username = extractUsername(token);
-        return username.equals(member.getUsername()) && !isTokenExpired(token);
+
+        boolean isValidToken = tokenRepository.findByToken(token)
+                .map(t->!t.isLoggedOut()).orElse(false);
+
+        return username.equals(member.getUsername()) && !isTokenExpired(token) && isValidToken;
     }
 
     /*
