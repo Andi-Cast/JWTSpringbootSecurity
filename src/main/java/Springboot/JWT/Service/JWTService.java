@@ -86,3 +86,8 @@ public class JWTService {
     }
 
 }
+
+/*
+This service class is used for token generation, validation, and manipulation for authentication
+and authorization purposes.
+ */

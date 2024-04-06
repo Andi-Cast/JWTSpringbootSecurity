@@ -70,3 +70,10 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 }
+
+/*
+This class is responsible for intercepting incoming HTTP requests, extracting JWT token from
+authorization header, and validates them. If a valid token is found, an authentication is created
+and set in the Spring Security context. This filter ensures only authenticated users can access
+protected endpoints.
+ */

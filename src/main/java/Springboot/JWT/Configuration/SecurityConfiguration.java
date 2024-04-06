@@ -68,3 +68,9 @@ public class SecurityConfiguration {
     }
 
 }
+
+/*
+This class is responsible for configuring security settings. It defines the rules for URL
+authorization, session management, and logout behavior. It also provides beans for password
+encoding and authentication management.
+ */

@@ -87,3 +87,8 @@ public class AuthenticationService {
         tokenRepository.save(token);
     }
 }
+
+/*
+This service class provides functionality for user authentication and registration, including
+password encryption, token generation, token management, and database operations.
+ */

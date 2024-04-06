@@ -23,3 +23,8 @@ public class MemberDetailsServiceImp implements UserDetailsService {
                 .orElseThrow(()-> new UsernameNotFoundException("Member not found."));
     }
 }
+
+/*
+This class is used to ensure the authentication process has access to the necessary information
+to perform authentication checks.
+ */

@@ -29,3 +29,8 @@ public class AuthenticationController {
         return ResponseEntity.ok(authenticationService.authentication(request));
     }
 }
+
+/*
+This class is responsible for handling registration and login request from clients. It
+receives user information via HTTP POST request.
+ */
