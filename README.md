@@ -16,18 +16,19 @@
 ## **Examples Images**
 ###### Below I have included images of requests and their results.
 - Image 1: MEMBER registration.
-    - <img src="https://github.com/Andi-Cast/FirstSpringBootApplication/blob/main/ExampleScreenshots/GET_Example.png" height="auto" width="75%" >
+    - <img src="https://github.com/Andi-Cast/JWTSpringbootSecurity/blob/main/example_images/Register_Example.png" height="auto" width="75%" >
 - Image 2: MEMBER login.
-    - <img src="https://github.com/Andi-Cast/FirstSpringBootApplication/blob/main/ExampleScreenshots/POST_Example.png" height="auto" width="75%" > 
+    - <img src="https://github.com/Andi-Cast/JWTSpringbootSecurity/blob/main/example_images/Login_Example.png" height="auto" width="75%" > 
 - Image 3: DEMO endpoint.
-    - <img src="https://github.com/Andi-Cast/FirstSpringBootApplication/blob/main/ExampleScreenshots/DELETE_Example.png" height="auto" width="75%" >
+    - <img src="https://github.com/Andi-Cast/JWTSpringbootSecurity/blob/main/example_images/Demo_Example.png" height="auto" width="75%" >
 - Image 4: ADMIN only endpoint access denied by MEMBER.
-    - <img src="https://github.com/Andi-Cast/FirstSpringBootApplication/blob/main/ExampleScreenshots/PUT_Example.png" height="auto" width="75%" >
+    - <img src="https://github.com/Andi-Cast/JWTSpringbootSecurity/blob/main/example_images/Admin_Deny_Example.png" height="auto" width="75%" >
 - Image 5 & Image 6: Logout and demonstration how access is denied due to token being logged out.
-  - <img src="https://github.com/Andi-Cast/FirstSpringBootApplication/blob/main/ExampleScreenshots/PUT_GET_Example.png" height="auto" width="75%" >
+  - <img src="https://github.com/Andi-Cast/JWTSpringbootSecurity/blob/main/example_images/Logout_Example.png" height="auto" width="75%" >
+  - <img src="https://github.com/Andi-Cast/JWTSpringbootSecurity/blob/main/example_images/Logout_Demo_Example.png" height="auto" width="75%" >
 - Image 6: ADMIN registration.
-  - <img src="https://github.co
+   - <img src="https://github.com/Andi-Cast/JWTSpringbootSecurity/blob/main/example_images/Register_Admin_Example.png" height="auto" width="75%" >
 - Image 8: ADMIN only endpoint.
-  - <img src="https://github.co
+  - <img src="https://github.com/Andi-Cast/JWTSpringbootSecurity/blob/main/example_images/Admin_Example.png" height="auto" width="75%" >
     -----
 
